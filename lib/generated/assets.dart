@@ -8,6 +8,11 @@ class Assets {
   static const String fontsReadexProRegular = 'assets/fonts/ReadexPro-Regular.ttf';
   static const String fontsReadexProSemiBold = 'assets/fonts/ReadexPro-SemiBold.ttf';
   static const String imagesAkltyLogo = 'assets/images/akltyLogo.png';
+  static const String imagesOnboarding1 = 'assets/images/onboarding1.jpg';
+  static const String imagesOnboarding2 = 'assets/images/onboarding2.jpg';
+  static const String imagesOnboarding3 = 'assets/images/onboarding3.jpg';
+  static const String imagesOnboarding4 = 'assets/images/onboarding4.jpg';
+  static const String imagesOnboarding5 = 'assets/images/onboarding5.jpg';
   static const String imagesSplash = 'assets/images/splash.gif';
 
 }

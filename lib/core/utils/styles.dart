@@ -8,4 +8,17 @@ abstract class Styles {
       fontFamily: "ReadexPro",
       color: Colors.black,);
 
+static const TextStyle semiBold25 = TextStyle(
+  fontSize: 25,
+  fontFamily: 'ReadexPro',
+  letterSpacing: -0.3,
+  fontWeight: FontWeight.w600,
+);
+static const TextStyle regular16 = TextStyle(
+  fontSize: 16,
+  fontFamily: 'ReadexPro',
+  letterSpacing: -0.3,
+  fontWeight: FontWeight.w400,
+);
+
 }

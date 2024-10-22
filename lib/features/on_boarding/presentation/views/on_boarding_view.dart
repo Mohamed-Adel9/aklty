@@ -1,3 +1,4 @@
+import 'package:aklty/features/on_boarding/presentation/views/widgets/on_boarding_view_body.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatelessWidget {
@@ -5,8 +6,8 @@ class OnBoardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
+    return const Scaffold(
+      body: SafeArea(child: OnBoardingViewBody()),
     );
   }
 }
