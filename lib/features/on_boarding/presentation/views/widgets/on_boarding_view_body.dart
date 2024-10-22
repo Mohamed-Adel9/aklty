@@ -1,7 +1,5 @@
 import 'package:aklty/core/utils/styles.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/custom_carousel.dart';
-import 'package:aklty/generated/assets.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

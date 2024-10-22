@@ -1,7 +1,5 @@
-import 'dart:async';
 
 import 'package:aklty/core/functions/custom_linear_gradient.dart';
-import 'package:aklty/core/utils/styles.dart';
 import 'package:aklty/features/splash/presentation/views/widgets/animated_gif.dart';
 import 'package:flutter/material.dart';
 
