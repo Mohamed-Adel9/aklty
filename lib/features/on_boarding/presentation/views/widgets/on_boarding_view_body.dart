@@ -1,38 +1,35 @@
-import 'package:aklty/core/utils/styles.dart';
-import 'package:aklty/features/on_boarding/presentation/views/widgets/custom_carousel.dart';
+import 'package:aklty/features/on_boarding/presentation/views/widgets/on_boarding_first_screen.dart';
+import 'package:aklty/features/on_boarding/presentation/views/widgets/on_boarding_second_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class OnBoardingViewBody extends StatelessWidget {
+class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({super.key});
 
   @override
+  State<OnBoardingViewBody> createState() => _OnBoardingViewBodyState();
+}
+
+class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
+  final PageController _pageController = PageController();
+  int currentPage = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 23.0),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          CustomCarousel(),
-          SizedBox(
-            height: 80,
-          ),
-          Text(
-            "أستمتع بوجبتك المفضله",
-            style: Styles.semiBold25,
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          Text(
-            "بطل تفكير كتير في هتاكل إيه ومتى، إحنا هنا علشان نوفرلك خطط وجبات شخصية معمولة مخصوص ليك. كل وجبة متجهزة بعناية وبطريقة تناسب احتياجاتك وظروف يومك، عشان تلاقي اللي يناسبك بدون تعب أو قلق. سهلنا عليك كل حاجة، وما عليك غير تستمتع بوقتك وتسيب الباقي علينا.",
-            style: Styles.regular16,
-            textAlign: TextAlign.justify,
-          ),
-        ],
-      ),
+    return PageView(
+      controller: _pageController,
+      onPageChanged: (index) {
+        setState(() {
+          currentPage = index;
+        });
+      },
+      children:  [
+        OnBoardingFirstScreen(controller: _pageController,),
+        OnBoardingSecondScreen(controller: _pageController,),
+
+      ],
     );
   }
 }
+
+

@@ -24,9 +24,9 @@ class AnimatedGif extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text(
+             Text(
               "أكلتي",
-              style: Styles.bold50,
+              style: Styles.styleBold50(context),
             ),
           ],
         ),
