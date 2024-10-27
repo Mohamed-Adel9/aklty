@@ -22,7 +22,7 @@ class IndicatorAndButtonWidget extends StatelessWidget {
         children: [
           SmoothPageIndicator(
             controller: controller, // PageController
-            count: 3,
+            count: 2,
             effect: const ExpandingDotsEffect(), // your preferred effect
           ),
           const Spacer(),

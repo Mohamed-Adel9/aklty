@@ -1,4 +1,5 @@
 import 'package:aklty/core/utils/styles.dart';
+import 'package:aklty/features/on_boarding/presentation/views/widgets/allergen_buttons.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/indicator_and_button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -42,33 +43,12 @@ class OnBoardingSecondScreen extends StatelessWidget {
             style: Styles.styleRegular16(context),
             textAlign: TextAlign.justify,
           ),
-          const AllergiesItem(),
+          const SizedBox(
+            height: 50,
+          ),
+          AllergenButtons(),
+          const Spacer(),
         ],
-      ),
-    );
-  }
-}
-
-class AllergiesItem extends StatelessWidget {
-  const AllergiesItem({
-    super.key,
-  });
-
-  final bool isActive = true;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: isActive ?  const Color(0xff8A47EB) : Colors.white ,
-        border: Border.all(color: Colors.black),
-      ),
-      padding: const EdgeInsets.all(8),
-      child: Text(
-        "data",
-        style: Styles.styleRegular16(context)
-            .copyWith(color: isActive ? Colors.white : Colors.black),
       ),
     );
   }
