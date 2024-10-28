@@ -1,6 +1,6 @@
 
 import 'package:aklty/core/functions/custom_linear_gradient.dart';
-import 'package:aklty/features/splash/presentation/views/widgets/animated_gif.dart';
+import 'package:aklty/features/splash/presentation/views/widgets/animated_image.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatelessWidget {

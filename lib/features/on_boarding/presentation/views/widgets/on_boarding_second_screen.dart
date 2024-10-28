@@ -1,3 +1,4 @@
+import 'package:aklty/core/utils/colors.dart';
 import 'package:aklty/core/utils/styles.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/allergen_buttons.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/indicator_and_button_widget.dart';
@@ -23,7 +24,7 @@ class OnBoardingSecondScreen extends StatelessWidget {
           ),
           IndicatorAndButtonWidget(
             controller: controller,
-            textColor: Colors.deepPurple.shade900,
+            textColor: AppColors().primaryColor,
             buttonColor: Colors.white,
           ),
           const SizedBox(

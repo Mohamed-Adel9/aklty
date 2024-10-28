@@ -1,3 +1,4 @@
+import 'package:aklty/core/utils/colors.dart';
 import 'package:aklty/features/splash/presentation/views/spalsh_view.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +14,10 @@ class Aklty extends StatelessWidget {
     return MaterialApp(
       title: 'Aklty',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors().primaryColor),
         useMaterial3: true,
       ),
       home: const SplashView(),
     );
   }
 }
-

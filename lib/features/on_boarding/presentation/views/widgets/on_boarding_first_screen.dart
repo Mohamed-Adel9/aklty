@@ -1,3 +1,4 @@
+import 'package:aklty/core/utils/colors.dart';
 import 'package:aklty/core/utils/styles.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/custom_carousel.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/indicator_and_button_widget.dart';
@@ -41,7 +42,7 @@ class OnBoardingFirstScreen extends StatelessWidget {
           IndicatorAndButtonWidget(
             controller: controller,
             textColor: Colors.white,
-            buttonColor: Colors.deepPurple.shade900,
+            buttonColor: AppColors().primaryColor,
           ),
         ],
       ),

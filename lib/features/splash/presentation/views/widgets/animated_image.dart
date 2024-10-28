@@ -24,17 +24,20 @@ class AnimatedGif extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-             Text(
+            Text(
               "أكلتي",
               style: Styles.styleBold50(context),
             ),
           ],
         ),
-        gradient: customLinearGradient(colorList: [
-          Colors.blue.shade200,
-          Colors.purple.shade100,
-          Colors.purple.shade50,
-        ], stops: [0.0, 0.45, .9]),
+        gradient: customLinearGradient(
+          colorList: [
+            Colors.blue.shade200,
+            Colors.purple.shade100,
+            Colors.purple.shade50,
+          ],
+          stops: [0.0, 0.45, .9],
+        ),
         nextScreen: const OnBoardingView(),
         duration: const Duration(milliseconds: 3500),
         onInit: () async {

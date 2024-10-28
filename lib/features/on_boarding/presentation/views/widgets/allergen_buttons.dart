@@ -1,3 +1,4 @@
+import 'package:aklty/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class AllergenButtons extends StatefulWidget {
@@ -45,10 +46,10 @@ class _AllergenButtonsState extends State<AllergenButtons> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
         decoration: BoxDecoration(
-          color: selected ? Colors.purple : Colors.white,
+          color: selected ? AppColors().primaryColor : Colors.white,
           borderRadius: BorderRadius.circular(20.0),
           border: Border.all(
-            color: selected ? Colors.purple : Colors.black,
+            color: selected ? AppColors().primaryColor : Colors.black,
             width: 1.5,
           ),
         ),
