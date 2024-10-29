@@ -34,6 +34,23 @@ abstract class Styles {
       fontWeight: FontWeight.w400,
     );
   }
+  static TextStyle styleRegular18(context) {
+    return const TextStyle(
+      fontSize: 18,
+      color: Colors.white,
+      fontFamily: 'ReadexPro',
+
+      fontWeight: FontWeight.w400,
+    );
+  }static TextStyle styleRegular14(context) {
+    return const TextStyle(
+      fontSize: 14,
+      color: Colors.white,
+      fontFamily: 'ReadexPro',
+
+      fontWeight: FontWeight.w400,
+    );
+  }
 
   static TextStyle styleRegular20(context) {
     return const TextStyle(

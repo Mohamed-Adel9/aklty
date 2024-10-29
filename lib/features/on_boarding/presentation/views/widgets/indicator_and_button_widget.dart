@@ -8,11 +8,15 @@ class IndicatorAndButtonWidget extends StatelessWidget {
     required this.controller,
     required this.textColor,
     required this.buttonColor,
+    required this.pageCount, // Added pageCount parameter
+    required this.nextScreen, // Added nextScreen parameter
   });
 
   final PageController controller;
   final Color textColor;
   final Color buttonColor;
+  final int pageCount; // Number of pages in PageView
+  final Widget nextScreen; // Destination screen widget
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +25,14 @@ class IndicatorAndButtonWidget extends StatelessWidget {
       child: Row(
         children: [
           SmoothPageIndicator(
-            controller: controller, // PageController
-            count: 2,
-            effect: const ExpandingDotsEffect(), // your preferred effect
+            controller: controller,
+            count: pageCount,
+            effect: const ExpandingDotsEffect(),
           ),
           const Spacer(),
           TextButton(
-
-            onPressed: () {
-              controller.nextPage(
-                  curve: Curves.easeInOut,
-                  duration: const Duration(milliseconds: 500));
+            onPressed: () async {
+              await navToNextPage(context);
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: buttonColor,
@@ -46,5 +47,23 @@ class IndicatorAndButtonWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> navToNextPage(BuildContext context) async {
+    final currentPage = controller.page?.round() ?? 0;
+    if (currentPage == pageCount - 1) {
+      // If on the last page, navigate to the next screen
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => nextScreen,
+        ),
+      );
+    } else {
+      // Move to the next page
+      await controller.nextPage(
+        curve: Curves.easeInOut,
+        duration: const Duration(milliseconds: 500),
+      );
+    }
   }
 }

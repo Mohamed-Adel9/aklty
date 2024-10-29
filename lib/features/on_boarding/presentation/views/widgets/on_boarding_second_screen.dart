@@ -1,5 +1,6 @@
 import 'package:aklty/core/utils/colors.dart';
 import 'package:aklty/core/utils/styles.dart';
+import 'package:aklty/features/authentication/presentation/views/login_home_view.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/allergen_buttons.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/indicator_and_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,8 @@ class OnBoardingSecondScreen extends StatelessWidget {
             controller: controller,
             textColor: AppColors().primaryColor,
             buttonColor: Colors.white,
+            pageCount: 2,
+            nextScreen: const LoginHomeView(),
           ),
           const SizedBox(
             height: 50,

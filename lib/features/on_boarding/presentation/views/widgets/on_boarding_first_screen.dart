@@ -1,5 +1,6 @@
 import 'package:aklty/core/utils/colors.dart';
 import 'package:aklty/core/utils/styles.dart';
+import 'package:aklty/features/authentication/presentation/views/login_home_view.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/custom_carousel.dart';
 import 'package:aklty/features/on_boarding/presentation/views/widgets/indicator_and_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -26,14 +27,14 @@ class OnBoardingFirstScreen extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-           Text(
+          Text(
             "أستمتع بوجبتك المفضله",
             style: Styles.styleSemiBold25(context),
           ),
           const SizedBox(
             height: 40,
           ),
-           Text(
+          Text(
             "بطل تفكير كتير في هتاكل إيه ومتى، إحنا هنا علشان نوفرلك خطط وجبات شخصية معمولة مخصوص ليك. كل وجبة متجهزة بعناية وبطريقة تناسب احتياجاتك وظروف يومك، عشان تلاقي اللي يناسبك بدون تعب أو قلق. سهلنا عليك كل حاجة، وما عليك غير تستمتع بوقتك وتسيب الباقي علينا.",
             style: Styles.styleRegular16(context),
             textAlign: TextAlign.justify,
@@ -43,6 +44,8 @@ class OnBoardingFirstScreen extends StatelessWidget {
             controller: controller,
             textColor: Colors.white,
             buttonColor: AppColors().primaryColor,
+            pageCount: 2,
+            nextScreen: const LoginHomeView(),
           ),
         ],
       ),
