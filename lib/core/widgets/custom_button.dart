@@ -8,12 +8,14 @@ class CustomButton extends StatelessWidget {
     required this.text,
     required this.textColor,
     required this.image,
+    this.onPressed,
   });
 
   final Color bgColor;
   final String text;
   final Color textColor;
   final String image;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,23 +26,31 @@ class CustomButton extends StatelessWidget {
       ),
       width: MediaQuery.sizeOf(context).width,
       height: MediaQuery.sizeOf(context).height * .07,
-      child: Row(
-        children: [
-
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: bgColor),
-            onPressed: () {},
-            child: Text(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: bgColor,
+          elevation: 0,
+        ),
+        onPressed: onPressed,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
               text,
-              style: Styles.styleRegular18(context).copyWith(color: textColor),
+              style: Styles.styleRegular18(context).copyWith(
+                color: textColor,
+              ),
             ),
-          ),
-          Image.asset(
-            image ,
-            fit: BoxFit.cover,
-            height: MediaQuery.sizeOf(context).height * .07,
-          ),
-        ],
+            const SizedBox(
+              width: 10,
+            ),
+            Image.asset(
+              image,
+              fit: BoxFit.cover,
+              height: MediaQuery.sizeOf(context).height * .035,
+            ),
+          ],
+        ),
       ),
     );
   }
