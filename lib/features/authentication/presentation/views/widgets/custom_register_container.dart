@@ -1,14 +1,22 @@
 import 'package:aklty/core/utils/colors.dart';
 import 'package:aklty/core/utils/styles.dart';
 import 'package:aklty/core/widgets/tap_button_and_social_item.dart';
-import 'package:aklty/features/authentication/presentation/views/register_mail_view.dart';
+import 'package:aklty/features/authentication/presentation/views/login_mail_view.dart';
 import 'package:aklty/generated/assets.dart';
 import 'package:flutter/material.dart';
 
-class CustomLoginContainer extends StatelessWidget {
-  const CustomLoginContainer({
+class CustomRegisterContainer extends StatefulWidget {
+  const CustomRegisterContainer({
     super.key,
   });
+
+  @override
+  State<CustomRegisterContainer> createState() =>
+      _CustomRegisterContainerState();
+}
+
+class _CustomRegisterContainerState extends State<CustomRegisterContainer> {
+  bool isActive = true;
 
   @override
   Widget build(BuildContext context) {
@@ -40,19 +48,21 @@ class CustomLoginContainer extends StatelessWidget {
                   Expanded(
                     child: buildTabButton(
                       'سجل الان',
-                      true,
-                      () {},
+                      !isActive,
+                      () {
+                        Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const LoginMailView(),
+                              ),
+                            );
+                      },
                     ),
                   ),
                   Expanded(
                     child: buildTabButton(
                       'مستخدم جديد',
-                      false,
-                      () {
-                        MaterialPageRoute(
-                          builder: (context) => const RegisterMailView(),
-                        );
-                      },
+                      isActive,
+                      () {},
                     ),
                   ),
                 ],

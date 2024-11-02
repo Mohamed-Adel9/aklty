@@ -1,11 +1,9 @@
 import 'package:aklty/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-Widget buildTabButton(String text, bool isActive) {
+Widget buildTabButton(String text, bool isActive,Function ()? onPressed) {
   return TextButton(
-    onPressed: () {
-      isActive = !isActive;
-    },
+    onPressed: onPressed,
     style: TextButton.styleFrom(
       foregroundColor: isActive ? Colors.white : AppColors().primaryColor,
       backgroundColor: isActive ? AppColors().primaryColor: Colors.transparent,
