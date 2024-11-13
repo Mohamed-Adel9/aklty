@@ -1,5 +1,6 @@
 import 'package:aklty/core/utils/colors.dart';
 import 'package:aklty/core/utils/styles.dart';
+import 'package:aklty/core/widgets/custom_text_field.dart';
 import 'package:aklty/core/widgets/tap_button_and_social_item.dart';
 import 'package:aklty/features/authentication/presentation/views/login_mail_view.dart';
 import 'package:aklty/generated/assets.dart';
@@ -17,6 +18,9 @@ class CustomRegisterContainer extends StatefulWidget {
 
 class _CustomRegisterContainerState extends State<CustomRegisterContainer> {
   bool isActive = true;
+  final TextEditingController emailController =  TextEditingController();
+  final TextEditingController passwordController =  TextEditingController();
+  final TextEditingController rePasswordController =  TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -70,22 +74,21 @@ class _CustomRegisterContainerState extends State<CustomRegisterContainer> {
               const SizedBox(
                 height: 5,
               ),
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: 'ادخل اسم المستخدم',
-                  border: UnderlineInputBorder(),
-                ),
+               CustomTextField(
+                controller : emailController,
+                text: "ادخل اسم المستخدم",
               ),
-              const SizedBox(
-                height: 10,
+               CustomTextField(
+                controller : passwordController,
+                text: "ادخل كلمه السر",
+                 obscureText: true,
               ),
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: 'ادخل كلمه السر',
-                  border: UnderlineInputBorder(),
-                ),
-                obscureText: true,
+               CustomTextField(
+                controller : rePasswordController,
+                text: "اعد ادخال كلمه السر",
+                 obscureText: true,
               ),
+
               const SizedBox(
                 height: 15,
               ),
@@ -107,16 +110,7 @@ class _CustomRegisterContainerState extends State<CustomRegisterContainer> {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'نسيت كلمه السر ؟',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ),
-              ),
+
               Text('او',
                   style: Styles.styleRegular16(context)
                       .copyWith(color: Colors.grey)),

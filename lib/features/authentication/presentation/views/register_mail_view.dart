@@ -1,4 +1,3 @@
-import 'package:aklty/features/authentication/presentation/views/widgets/login_mail_view_body.dart';
 import 'package:aklty/features/authentication/presentation/views/widgets/register_mail_view_body.dart';
 import 'package:flutter/material.dart';
 

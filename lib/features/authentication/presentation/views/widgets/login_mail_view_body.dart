@@ -11,7 +11,7 @@ class LoginMailViewBody extends StatelessWidget {
     return Stack(
       children: [
         const LoginLogoWidget(),
-        const CustomLoginContainer(),
+         CustomLoginContainer(),
         Align(
           alignment: Alignment.bottomRight,
           child: Image.asset(Assets.imagesVegitables),
